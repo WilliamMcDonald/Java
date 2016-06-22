@@ -1,0 +1,53 @@
+class LowToMin {
+	public static void main (String args[]) {
+		
+		double random;		// random
+		double minValue;	// minimum value
+		double nextValue;	// next value
+		int count;			// count
+		int acount; 		// ascending count
+		int minutes;		// minutes program took to run
+		long startTime;		// Time program starts at in milliseconds
+		long stopTime;		// Time program ends in milliseconds
+		long elapsedTime;	// time in seconds elapsed during program
+		
+		minValue = -1;
+		nextValue = -1;
+		count = 0;
+		acount = 0;
+		startTime = = System.currentTimeMillis();
+		
+		while (count < 1000000000) {
+			random = Math.random();
+			if (count == 0) {
+				minValue = random;
+			}
+			else {
+				nextValue = random;
+			}
+			if (nextValue > minValue) {
+				acount++; 
+			}
+			
+			System.out.print(random+" ");
+			count++;
+		}
+		
+		stopTime = System.currentTimeMillis();
+		elapsedTime = (stopTime - startTime) / 1000;
+		
+		System.out.println();
+		System.out.println("Numbers in a row: " + acount);
+
+		
+		if (elapsedTime >= 60) {
+			minutes = Math.round(elapsedTime / 60);
+			elapsedTime = elapsedTime % 60;
+			System.out.println("Elapsed Time: " + minutes + " minutes and " + elapsedTime + " seconds.");
+		}
+		else{
+			System.out.println("Elapsed Time: " + elapsedTime + " seconds");
+		}
+		
+	}
+}
